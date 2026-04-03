@@ -4,5 +4,6 @@
   <Project Path="MediaPipe.FaceMesh.csproj" />
   <Project Path="Mediapipe.Runtime.Tests.csproj" />
   <Project Path="Mediapipe.Holistic.Runtime.csproj" />
+  <Project Path="Assembly-CSharp.csproj" />
   <Project Path="UniUlm.UnitEye.Editor.csproj" />
 </Solution>
