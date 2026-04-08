@@ -9,17 +9,21 @@ public class LaserBeam : MonoBehaviour
     public float maxDistance = 100f;
 
     public Transform laserOrigin;
+    public float damageCooldown = 0.2f;  // damage every 0.2 seconds
+    private float damageTimer = 0f;
 
     void Update()
     {
         if (Input.GetMouseButton(0))
         {
             line.enabled = true;
+            damageTimer -= Time.deltaTime;  // decrease timer
             UpdateLaser();
         }
         else
         {
             line.enabled = false;
+            damageTimer = 0f;  // reset timer when not shooting
         }
     }
 
@@ -36,6 +40,13 @@ public class LaserBeam : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit hit, maxDistance))
         {
             endPoint = hit.point;
+            // Check if we hit an enemy
+            EnemyController enemy = hit.collider.GetComponent<EnemyController>();
+            if (enemy != null && damageTimer <= 0f)
+            {
+                enemy.TakeDamage(1);       // 1 damage per tick
+                damageTimer = damageCooldown;
+            }
         }
         else
         {
