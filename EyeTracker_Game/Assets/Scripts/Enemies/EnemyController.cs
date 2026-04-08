@@ -8,18 +8,22 @@ public class EnemyController : MonoBehaviour
     public Sprite shootingSprite;
     public Transform spawnPoint;
     public EnemySpawner spawner;
+    public int maxHealth = 1;
+
 
     private SpriteRenderer sr;
 
     public float idleTime = 1.5f;
     public float chargeTime = 1f;
     public float shootTime = 0.3f;
+    private int currentHealth;
 
     private EnemyState currentState;
 
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
+        currentHealth = maxHealth;
         StartCoroutine(StateLoop());
     }
 
@@ -66,6 +70,14 @@ public class EnemyController : MonoBehaviour
     {
         Debug.Log("Enemy fired!");
         // Later: damage player, trigger effects, etc.
+    }
+
+    public void TakeDamage(int amount)
+    {
+        currentHealth -= amount;
+
+        if (currentHealth <= 0)
+            Die();
     }
 
     public void Die()

@@ -2907,7 +2907,15 @@ MonoBehaviour:
   - {fileID: 1178575711}
   enemyPrefabs:
   - {fileID: 1182308945718172576, guid: 2e4bd796caae46741b1822a1ba0f6ce1, type: 3}
-  spawnDelay: 2
+  - {fileID: 5125133370016973683, guid: 39c659f775ffa4a4480049232d6effc1, type: 3}
+  - {fileID: 8924795195365488286, guid: bcc4be79970f3204db33a418007746ee, type: 3}
+  - {fileID: 2108911729015058913, guid: bb60054d53dc566488b787128df2daee, type: 3}
+  - {fileID: 6982499368608331187, guid: 35b78c8abc1c7ae4ba437599283960b7, type: 3}
+  - {fileID: 1920211321937165438, guid: 094e4079173dcb44a9a39e1e3fbf8dac, type: 3}
+  - {fileID: 2360591345693184584, guid: e9944e99f49a1ea42a4d3bb2d674de79, type: 3}
+  - {fileID: 7338645815501432596, guid: 1f145178a56e3824db41dbd768ab747f, type: 3}
+  - {fileID: 523283084176796362, guid: 29a21288098c3c946a45f46cc0acfb33, type: 3}
+  spawnDelay: 1
 --- !u!4 &1426295735
 Transform:
   m_ObjectHideFlags: 0
@@ -3640,6 +3648,7 @@ MonoBehaviour:
   line: {fileID: 1692450009}
   maxDistance: 100
   laserOrigin: {fileID: 1845317094}
+  damageCooldown: 0.2
 --- !u!4 &1692450011
 Transform:
   m_ObjectHideFlags: 0
