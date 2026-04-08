@@ -1,14 +1,23 @@
 using UnityEngine;
-
+using UnityEngine.SceneManagement; //Added for scene management, currently commented out as we dont have a game over scene yet
 public class PlayerHealth : MonoBehaviour
 {
     public int maxHealth = 4;
     int currentHealth;
+    public GameObject gameOverScreen;
 
     void Start()
     {
         currentHealth = maxHealth;
     }
+    void Update() //Restart Game this is temporary, as we may want a button instead
+    {
+        if (Input.GetKeyDown(KeyCode.R) && currentHealth <= 0)
+        {
+            Restart();
+        }
+    }
+   
 
     public void ChangeHealth(int amount) //made public for testing purposes
     {
@@ -20,18 +29,27 @@ public class PlayerHealth : MonoBehaviour
             GameOver();
         }
     }
-
-    void OnTriggerEnter(Collider other)
+    void Restart()//temporary 
     {
-        if (other.CompareTag("EnemyLaser"))
-        {
-            ChangeHealth(-1);
-            Destroy(other.gameObject);
-        }
+        Time.timeScale = 1f; // Unpauses the game when restarting
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-    void GameOver()
+
+    //void OnTriggerEnter(Collider other) Commented out as we dont have a laser prefab, Health is currently controlled by EnemyController.cs
+    //{
+    //    if (other.CompareTag("EnemyLaser"))
+    //    {                  
+    //        ChangeHealth(-1);
+    //        Destroy(other.gameObject);
+    //    }
+    //}
+
+    void GameOver() // Uncomment when we have a game over screen, currently just logs to console and pauses the game
     {
         Debug.Log("Game Over!");
-        // SceneManager.LoadScene("GameOver");
+        Time.timeScale = 0f; // Pauses everything when death is reached
+
+        // gameOverScreen.SetActive(true); // two options, either an object or a scene
+        // SceneManager.LoadScene("GameOver"); // Loads the game over scene, make sure to create one and name it "GameOver", may be better to transition to a start screen if needed
     }
 }

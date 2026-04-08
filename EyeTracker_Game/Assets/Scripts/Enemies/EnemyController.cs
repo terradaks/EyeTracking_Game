@@ -10,8 +10,10 @@ public class EnemyController : MonoBehaviour
     public EnemySpawner spawner;
     public int maxHealth = 1;
 
+    
 
     private SpriteRenderer sr;
+    private PlayerHealth playerHealth;
 
     public float idleTime = 1.5f;
     public float chargeTime = 1f;
@@ -25,6 +27,7 @@ public class EnemyController : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         currentHealth = maxHealth;
         StartCoroutine(StateLoop());
+        playerHealth = FindObjectOfType<PlayerHealth>();
     }
 
     IEnumerator StateLoop()
@@ -69,6 +72,8 @@ public class EnemyController : MonoBehaviour
     void Shoot()
     {
         Debug.Log("Enemy fired!");
+        if (playerHealth != null)
+            playerHealth.ChangeHealth(-1);
         // Later: damage player, trigger effects, etc.
     }
 
