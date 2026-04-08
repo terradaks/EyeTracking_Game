@@ -1,25 +1,22 @@
 fileFormatVersion: 2
-guid: 77f4d2cde922a814a9caac2c4ffe61da
+guid: afe8b0f1b2934014fa19ddd88c2f6f01
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3033972222198718452
-    second: Shipsplanet_concepts_0
+      213: -863569524357026071
+    second: ship2_3charge_0
   - first:
-      213: 8314589754674699829
-    second: Shipsplanet_concepts_1
+      213: 1175456217227472856
+    second: ship2_3charge_1
   - first:
-      213: 6413313034103367666
-    second: Shipsplanet_concepts_2
+      213: -1586708142793297235
+    second: ship2_3charge_2
   - first:
-      213: -430732905154034403
-    second: Shipsplanet_concepts_3
+      213: 5517499730400057807
+    second: ship2_3charge_3
   - first:
-      213: 7157169101847808830
-    second: Shipsplanet_concepts_4
-  - first:
-      213: 5010696731249403385
-    second: Shipsplanet_concepts_5
+      213: 1752966680107388384
+    second: ship2_3charge_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -115,13 +112,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Shipsplanet_concepts_0
+      name: ship2_3charge_0
       rect:
         serializedVersion: 2
-        x: 261
-        y: 727
-        width: 147
-        height: 174
+        x: 268
+        y: 204
+        width: 1422
+        height: 737
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,20 +127,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c00617da65a25e5d0800000000000000
-      internalID: -3033972222198718452
+      spriteID: 9eea8ddc71cf304f0800000000000000
+      internalID: -863569524357026071
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shipsplanet_concepts_1
+      name: ship2_3charge_1
       rect:
         serializedVersion: 2
-        x: 529
-        y: 827
-        width: 141
-        height: 136
+        x: 600
+        y: 200
+        width: 140
+        height: 88
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +149,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 53edc7c445b536370800000000000000
-      internalID: 8314589754674699829
+      spriteID: 8df2ed4a33f005010800000000000000
+      internalID: 1175456217227472856
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shipsplanet_concepts_2
+      name: ship2_3charge_2
       rect:
         serializedVersion: 2
-        x: 988
-        y: 632
-        width: 547
-        height: 384
+        x: 742
+        y: 199
+        width: 55
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2f72d1fa93aa00950800000000000000
-      internalID: 6413313034103367666
+      spriteID: da2f592d951eaf9e0800000000000000
+      internalID: -1586708142793297235
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shipsplanet_concepts_3
+      name: ship2_3charge_3
       rect:
         serializedVersion: 2
-        x: 497
-        y: 627
-        width: 141
-        height: 136
+        x: 1166
+        y: 193
+        width: 55
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,20 +193,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d15c83374bab50af0800000000000000
-      internalID: -430732905154034403
+      spriteID: fc91fc695c8129c40800000000000000
+      internalID: 5517499730400057807
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shipsplanet_concepts_4
+      name: ship2_3charge_4
       rect:
         serializedVersion: 2
-        x: 30
-        y: 127
-        width: 812
-        height: 376
+        x: 1223
+        y: 195
+        width: 140
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,30 +215,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e3b4a09b06f535360800000000000000
-      internalID: 7157169101847808830
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shipsplanet_concepts_5
-      rect:
-        serializedVersion: 2
-        x: 878
-        y: 154
-        width: 1021
-        height: 431
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9f5e4571122998540800000000000000
-      internalID: 5010696731249403385
+      spriteID: 0ed85ee68e9c35810800000000000000
+      internalID: 1752966680107388384
       vertices: []
       indices: 
       edges: []
@@ -260,12 +235,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Shipsplanet_concepts_0: -3033972222198718452
-      Shipsplanet_concepts_1: 8314589754674699829
-      Shipsplanet_concepts_2: 6413313034103367666
-      Shipsplanet_concepts_3: -430732905154034403
-      Shipsplanet_concepts_4: 7157169101847808830
-      Shipsplanet_concepts_5: 5010696731249403385
+      ship2_3charge_0: -863569524357026071
+      ship2_3charge_1: 1175456217227472856
+      ship2_3charge_2: -1586708142793297235
+      ship2_3charge_3: 5517499730400057807
+      ship2_3charge_4: 1752966680107388384
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
