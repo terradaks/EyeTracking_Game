@@ -5,6 +5,8 @@ public class PlayerHealth : MonoBehaviour
     public int maxHealth = 4;
     int currentHealth;
     public GameObject gameOverScreen;
+    public CameraShake cameraShake;
+    public DamageOverlay damageOverlay;
 
     void Start()
     {
@@ -23,6 +25,15 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
         Debug.Log(currentHealth + "/" + maxHealth);
+
+        if (amount < 0) // player took damage
+        {
+            if (cameraShake != null)
+                cameraShake.Shake();
+
+            if (damageOverlay != null)
+                damageOverlay.Flash();
+        }
 
         if (currentHealth <= 0)
         {

@@ -23,7 +23,7 @@ public class EnemySpawner : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(Random.Range(1f, 2.5f));
+            yield return new WaitForSeconds(Random.Range(spawnDelay * 0.8f, spawnDelay * 1.2f));
             SpawnEnemy();
         }
     }
