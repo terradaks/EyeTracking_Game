@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5825324310029445727}
   m_Layer: 0
   m_Name: Ship G Monster
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
