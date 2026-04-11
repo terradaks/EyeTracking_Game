@@ -8,6 +8,13 @@ public class CrosshairController : MonoBehaviour
     private int currentRow = 1;
     private Vector2 targetPosition;
     public Canvas canvas;
+    public enum InputMode
+    {
+        Mouse,
+        EyeTracking
+    }
+    [SerializeField] private Gaze gaze;
+    public InputMode inputMode = InputMode.Mouse;
 
     // Track currently fading coroutine for each row
     private Coroutine[] fadeCoroutines;
@@ -27,6 +34,15 @@ public class CrosshairController : MonoBehaviour
 
         // Smooth vertical snapping
         crosshair.anchoredPosition = Vector2.Lerp(crosshair.anchoredPosition, targetPosition, Time.deltaTime * 10f);
+
+        if (Input.GetKeyDown(KeyCode.Tab))
+            {
+                inputMode = inputMode == InputMode.Mouse 
+                    ? InputMode.EyeTracking 
+                    : InputMode.Mouse;
+
+                Debug.Log("Input Mode: " + inputMode);
+            }
     }
 
     void HandleRowInput()
@@ -52,8 +68,38 @@ public class CrosshairController : MonoBehaviour
     {
         // Convert screen X to Canvas local X
         Vector2 localPoint;
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.transform as RectTransform, Input.mousePosition, canvas.worldCamera, out localPoint);
+
+        Vector2 screenPos = GetLookPosition();
+
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            canvas.transform as RectTransform,
+            screenPos,
+            canvas.worldCamera,
+            out localPoint
+        );
+
         targetPosition.x = localPoint.x;
+    }
+    Vector2 GetLookPosition()
+    {
+        switch (inputMode)
+        {
+            case InputMode.Mouse:
+                return Input.mousePosition;
+
+            case InputMode.EyeTracking:
+                return GetEyePosition();
+        }
+
+        return Input.mousePosition;
+    }
+
+    Vector2 GetEyePosition()
+    {
+        if (gaze == null)
+            return Input.mousePosition;
+
+        return gaze.gazeLocation;
     }
 
     void MoveToRow()
