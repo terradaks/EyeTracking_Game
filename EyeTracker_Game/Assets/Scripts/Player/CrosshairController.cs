@@ -34,15 +34,6 @@ public class CrosshairController : MonoBehaviour
 
         // Smooth vertical snapping
         crosshair.anchoredPosition = Vector2.Lerp(crosshair.anchoredPosition, targetPosition, Time.deltaTime * 10f);
-
-        if (Input.GetKeyDown(KeyCode.Tab))
-            {
-                inputMode = inputMode == InputMode.Mouse 
-                    ? InputMode.EyeTracking 
-                    : InputMode.Mouse;
-
-                Debug.Log("Input Mode: " + inputMode);
-            }
     }
 
     void HandleRowInput()
