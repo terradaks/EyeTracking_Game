@@ -6,6 +6,7 @@ public class LaserBeam : MonoBehaviour
     public Canvas canvas;
 
     public LineRenderer line;
+    public AudioSource laserAudio;
     public float maxDistance = 100f;
 
     public Transform laserOrigin;
@@ -17,6 +18,12 @@ public class LaserBeam : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             line.enabled = true;
+
+            if (!laserAudio.isPlaying)
+            {
+                laserAudio.Play();
+            }
+
             damageTimer -= Time.deltaTime;  // decrease timer
             UpdateLaser();
         }
@@ -24,6 +31,11 @@ public class LaserBeam : MonoBehaviour
         {
             line.enabled = false;
             damageTimer = 0f;  // reset timer when not shooting
+
+            if (laserAudio.isPlaying)
+            {
+                laserAudio.Stop();
+            }
         }
     }
 
