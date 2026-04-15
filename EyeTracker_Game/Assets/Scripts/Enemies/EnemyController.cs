@@ -9,6 +9,7 @@ public class EnemyController : MonoBehaviour
     public Transform spawnPoint;
     public EnemySpawner spawner;
     public int maxHealth = 1;
+    public AudioClip[] deathClips;
 
     
 
@@ -74,7 +75,6 @@ public class EnemyController : MonoBehaviour
         Debug.Log("Enemy fired!");
         if (playerHealth != null)
             playerHealth.ChangeHealth(-1);
-        // Later: damage player, trigger effects, etc.
     }
 
     public void TakeDamage(int amount)
@@ -88,7 +88,27 @@ public class EnemyController : MonoBehaviour
     public void Die()
     {
         spawner.FreePoint(spawnPoint);
+        PlayDeathSound();
         Destroy(gameObject);
+    }
+
+    void PlayDeathSound()
+    {
+        if (deathClips.Length == 0) return;
+
+        int index = Random.Range(0, deathClips.Length);
+
+        GameObject go = new GameObject("DeathSound");
+        AudioSource source = go.AddComponent<AudioSource>();
+
+        source.clip = deathClips[index];
+        source.volume = 0.3f;
+        source.pitch = Random.Range(0.9f, 1.1f);
+
+        source.spatialBlend = 0f; 
+        source.Play();
+
+        Destroy(go, source.clip.length);
     }
 }
 
